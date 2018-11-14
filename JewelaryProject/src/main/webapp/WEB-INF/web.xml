@@ -4,6 +4,16 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>AddProductController</servlet-name>
+  	<display-name>AddProductController</display-name>
+  	<description></description>
+  	<servlet-class>com.frontend.Controller.AddProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>AddProductController</servlet-name>
+  	<url-pattern>/AddProductController</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
 <welcome-file>
 HomePage.jsp
