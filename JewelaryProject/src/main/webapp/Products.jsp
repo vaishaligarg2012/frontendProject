@@ -8,7 +8,7 @@
 
 
 <div>
-	<div class="split left">
+	<div class="split left" style="top: 106px;">
         <div class="">
 			<div>
 				<button style="margin-left: 2%;" type="button" class="btn btn-dark">
@@ -44,7 +44,7 @@
 		</div>
 	</div>
 
-	<div class="split right">
+	<div class="split right" style="top: 106px;">
 		<div class="centered"></div>
 		<div class="container-fluid">
 			<div class="">

@@ -6,7 +6,7 @@
 <link href="css/Category.css" rel="stylesheet" type="text/css" media="all" />
 
 <div class="container-fluid">
-	<div class="split left">
+	<div class="split left" style="top: 106px;">
 		<div class="">
 			<div>
 			<button style="margin-left: 2%;color:white" type="button" class="btn btn-dark">
@@ -36,7 +36,7 @@
 		</div>
 	</div>
 
-	<div class="split right">
+	<div class="split right" style="top: 106px;">
 		<div class="">
 			<h4>${msg}</h4>
 			<div class="col-md-8">
