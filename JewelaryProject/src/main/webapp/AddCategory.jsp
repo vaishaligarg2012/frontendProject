@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <jsp:include page='Header.jsp' />
 <jsp:include page='NavbarProducts.jsp' />
@@ -11,15 +11,16 @@
 		<div class="centered">
 
 			<div>
+		
 				<a href="ViewAllCategory">View All Category</a>
 			</div>
 			<div class="tab-pane fade in active" id="home">
-				<c:forEach items="${viewAllCategory}" var="pObj">
+				<c:forEach items="${listCategory}" var="pObj">
 
 					<div class="list-group" style="margin-bottom: 0px">
-						<a class="list-group-item" href="detailMails?mid=${pObj.name}">
+						<a class="list-group-item" href="detailMails?mid=${pObj.categoryName}">
 							<span class="name"
-							style="min-width: 120px; display: inline-block;"><b>${pObj.des}</b>
+							style="min-width: 120px; display: inline-block;"><b>${pObj.categoryDesc}</b>
 						</span>
 						</a>
 

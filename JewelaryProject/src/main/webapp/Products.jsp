@@ -10,7 +10,7 @@
     	<div> <a href="viewAllProduct">View All Products</a>
 			</div>
 			<div class="tab-pane fade in active" id="home">
-				<c:forEach items="${ViewAllCategory}" var="pObj">
+				<c:forEach items="${listProuct}" var="pObj">
 
 					<div class="list-group" style="margin-bottom: 0px">
 						<a class="list-group-item" href="detailMails?mid=${pObj.productName}">
@@ -40,9 +40,8 @@
 							<div class="form-group">
 								<select class="form-control input-lg">
 									<option selected>Category</option>
-									<c:forEach items="${listCategory}" var="category">
-									
-										<option value="${category.id}">${category.Id}
+									<c:forEach items="${CategoryNames}" var="category">
+									    <option value="${category.categoryName}">${category.categoryName}
 										</option>
 									</c:forEach>
 

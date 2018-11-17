@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.backend.DAO.CategoryDAOImpl;
 import com.backend.DAO.ProductDAOImpl;
+import com.backend.Model.Category;
 import com.backend.Model.Product;
 
 @WebServlet("/viewAllProduct")
@@ -21,10 +23,13 @@ public class viewAllProducts extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		//Product product=new Product();
-		ProductDAOImpl obj=new ProductDAOImpl();
-		List<Product> list =  obj.viewAllProduct();
-		request.setAttribute("listProuct", list);
-		RequestDispatcher dispatcher= request.getRequestDispatcher("Products.jsp");
+	    CategoryDAOImpl category=new CategoryDAOImpl();
+	//	ProductDAOImpl obj=new ProductDAOImpl();
+		//List<Product> list =  obj.viewAllProduct();  // error Products is mapped
+		List<Category> catNameList=category.getAllCategory();
+		//request.setAttribute("listProuct", list);
+		request.setAttribute("CategoryNames", catNameList);
+		RequestDispatcher dispatcher= request.getRequestDispatcher("/Products.jsp");
 		dispatcher.forward(request, response);
 	}
 

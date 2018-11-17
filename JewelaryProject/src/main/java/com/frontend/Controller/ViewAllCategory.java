@@ -1,7 +1,7 @@
 package com.frontend.Controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,27 +19,15 @@ public class ViewAllCategory extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
-		Category category=new Category();
-		ArrayList<Category> list=new ArrayList<Category>();
-		ArrayList<Category> listDetails=new ArrayList<Category>();
-		CategoryDAOImpl obj=new CategoryDAOImpl();
-		list =  (ArrayList<Category>) obj.getAllCategory();
-	    for (Category u : list) {
-	    	category.setId(u.getId());
-			category.setCategoryName(u.getCategoryName());
-			category.setCategoryDesc(u.getCategoryDesc());
-			listDetails.add(category);
-	    }
-	    String str="Vaishali";
-		request.setAttribute("name", str);
+	    CategoryDAOImpl category=new CategoryDAOImpl();
+		List<Category> list=category.getAllCategory();
 		
-	    
-	    request.setAttribute("listCategory", listDetails);
-       // RequestDispatcher dispatcher=request.getRequestDispatcher("/Products.jsp");
-    	RequestDispatcher dispatcher= request.getRequestDispatcher("Products.jsp");
-    	
-
-       // RequestDispatcher dispatcher = request.getRequestDispatcher("Products.jsp");
+		for(Category x:list) {
+			System.out.println(x.getCategoryName()+" "+x.getId());
+				
+		}
+		request.setAttribute("listCategory", list);
+        RequestDispatcher dispatcher= request.getRequestDispatcher("/AddCategory.jsp");
         dispatcher.forward(request, response);
 		}
 
