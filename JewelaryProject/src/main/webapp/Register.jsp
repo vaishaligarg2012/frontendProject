@@ -13,8 +13,8 @@
 </head>
 <body>
 
-<jsp:include page='Header.jsp' />
-<jsp:include page='NavbarProducts.jsp' />
+	<jsp:include page='Header.jsp' />
+	<jsp:include page='NavbarProducts.jsp' />
 
 	<div class="container">
 
@@ -41,11 +41,10 @@
 					name="lname">
 			</div>
 			<div class="form-group">
-				<label for="pwd">Roll:</label> <input type="text"
-					class="form-control" id="roll" placeholder="Admin/User"
-					name="roll">
+				<label for="pwd">Role:</label> <input type="text"
+					class="form-control" id="role" placeholder="Admin/User" name="role">
 			</div>
-			
+
 			<div>
 				<button type="submit" class="btn btn-default">Create</button>
 			</div>

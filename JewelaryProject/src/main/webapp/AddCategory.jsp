@@ -8,67 +8,65 @@
 <body>
 
 	<div class="split left">
-		<div class="centered">
-
+		<div class="">
 			<div>
-		
-				<a href="ViewAllCategory">View All Category</a>
+			<button style="margin-left: 2%;color:white" type="button" class="btn btn-dark">
+				<a href="ViewAllCategory" style="color:white">View All Category</a>
+				</button>
 			</div>
-			<div class="tab-pane fade in active" id="home">
-				<c:forEach items="${listCategory}" var="pObj">
-
-					<div class="list-group" style="margin-bottom: 0px">
-						<a class="list-group-item" href="detailMails?mid=${pObj.categoryName}">
-							<span class="name"
-							style="min-width: 120px; display: inline-block;"><b>${pObj.categoryDesc}</b>
-						</span>
-						</a>
-
-					</div>
-				</c:forEach>
+			<div class="container" style="width: auto">
+				<table class="table">
+					<thead class="thead-dark">
+						<tr>
+							<th>#Id</th>
+							<th>Name</th>
+							<th>Description</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${listCategory}" var="pObj">
+							<tr>
+								<td>${pObj.categoryId}</td>
+								<td style="width: 30%">${pObj.categoryName}</td>
+								<td>${pObj.categoryDesc}</td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
 			</div>
-
 		</div>
 	</div>
 
 	<div class="split right">
-		<div class="centered">
-<!-- Material form contact -->
-<div class="card" style="width:138%">
+		<div class="">
+			<h4>${msg}</h4>
+			<div class="col-md-8">
+				<div class="card card-body" style="width: 155%;">
+					<h3 class="text-center mb-4">Add Category</h3>
+					<form class="text-center" action="AddCategory" method="post"
+						style="color: #757575;">
 
-    <h5 class="card-header info-color white-text text-center py-4">
-        <strong>Add Category</strong>
-    </h5>
-	<h4>${msg}</h4>
+						<fieldset>
 
-    <!--Card content-->
-    <div class="card-body px-lg-5 pt-0">
+							<div class="form-group">
+								<input class="form-control input-lg"
+									placeholder="Enter Category Name" name="name" type="text">
+							</div>
 
-        <!-- Form -->
-        <form class="text-center" action="AddCategory" method="post"  style="color: #757575;">
+							<div class="form-group">
+								<textarea id="des" name="des" placeholder="Enter Category Description "
+									class="form-control input-lg" rows="4"></textarea>
+							</div>
 
-            <!-- Name -->
-            <div class="md-form mt-3">
-             <label for="materialContactFormName">Category Name</label>
-            
-                <input type="text" id="name" name="name" placeholder="eg: Bangles Set" class="form-control">
-               </div>
-            <!--Message-->
-            <div class="md-form">
-                <label for="materialContactFormMessage">Description</label>
-            
-                <textarea id="des" name="des" placeholder="eg:About product "class="form-control md-textarea" rows="4"></textarea>
-            </div>
-            <!-- Send button -->
-            <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" style="background-color: yellowgreen;color: white;" type="submit">Add</button>
 
-        </form>
-        <!-- Form -->
+							<input class="btn btn-lg btn-primary btn-block"
+								value="Add Product" type="submit">
+						</fieldset>
+					</form>
+				</div>
+			</div>
 
-    </div>
-
-</div>
-<!-- Material form contact -->
+			<!-- Material form contact -->
 
 		</div>
 	</div>

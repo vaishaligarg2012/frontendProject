@@ -23,7 +23,7 @@ public class ViewAllCategory extends HttpServlet {
 		List<Category> list=category.getAllCategory();
 		
 		for(Category x:list) {
-			System.out.println(x.getCategoryName()+" "+x.getId());
+			System.out.println(x.getCategoryName()+" "+x.getCategoryId());
 				
 		}
 		request.setAttribute("listCategory", list);

@@ -1,7 +1,6 @@
 package com.frontend.Controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -24,10 +23,10 @@ public class viewAllProducts extends HttpServlet {
 		response.setContentType("text/html");
 		//Product product=new Product();
 	    CategoryDAOImpl category=new CategoryDAOImpl();
-	//	ProductDAOImpl obj=new ProductDAOImpl();
-		//List<Product> list =  obj.viewAllProduct();  // error Products is mapped
+		ProductDAOImpl obj=new ProductDAOImpl();
+		List<Product> list =  obj.viewAllProduct();  // error Products is mapped
 		List<Category> catNameList=category.getAllCategory();
-		//request.setAttribute("listProuct", list);
+		request.setAttribute("listProuct", list);
 		request.setAttribute("CategoryNames", catNameList);
 		RequestDispatcher dispatcher= request.getRequestDispatcher("/Products.jsp");
 		dispatcher.forward(request, response);
