@@ -1,4 +1,4 @@
-<%@ taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page='Header.jsp' />
 <jsp:include page='NavbarProducts.jsp' />
@@ -56,7 +56,7 @@
             <div class="md-form">
                 <label for="materialContactFormMessage">Description</label>
             
-                <textarea type="text" id="des" name="des" placeholder="eg:About product "class="form-control md-textarea" rows="4"></textarea>
+                <textarea id="des" name="des" placeholder="eg:About product "class="form-control md-textarea" rows="4"></textarea>
             </div>
             <!-- Send button -->
             <button class="btn btn-outline-info btn-rounded btn-block z-depth-0 my-4 waves-effect" style="background-color: yellowgreen;color: white;" type="submit">Add</button>

@@ -5,18 +5,20 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-  	<servlet-name>AddProductController</servlet-name>
-  	<display-name>AddProductController</display-name>
+  	<servlet-name>viewAllProducts</servlet-name>
+  	<display-name>viewAllProducts</display-name>
   	<description></description>
-  	<servlet-class>com.frontend.Controller.AddProductController</servlet-class>
+  	<servlet-class>com.frontend.Controller.viewAllProducts</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>AddProductController</servlet-name>
-  	<url-pattern>/AddProductController</url-pattern>
+  	<servlet-name>viewAllProducts</servlet-name>
+  	<url-pattern>/viewAllProducts</url-pattern>
   </servlet-mapping>
+  
   <welcome-file-list>
 <welcome-file>
 HomePage.jsp
 </welcome-file>
 </welcome-file-list>
  </web-app>
+ 

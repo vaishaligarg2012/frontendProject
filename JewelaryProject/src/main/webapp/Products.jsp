@@ -1,24 +1,21 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page='Header.jsp' />
 <jsp:include page='NavbarProducts.jsp' />
 <link href="css/Category.css" rel="stylesheet" type="text/css"	media="all" />
 
 <body>
-
 	<div class="split left">
 		<div class="centered">
-
-			<div>
-				<a href="ViewAllCategory">View All Products</a>
+    	<div> <a href="viewAllProduct">View All Products</a>
 			</div>
 			<div class="tab-pane fade in active" id="home">
-				<c:forEach items="${viewAllCategory}" var="pObj">
+				<c:forEach items="${ViewAllCategory}" var="pObj">
 
 					<div class="list-group" style="margin-bottom: 0px">
-						<a class="list-group-item" href="detailMails?mid=${pObj.name}">
+						<a class="list-group-item" href="detailMails?mid=${pObj.productName}">
 							<span class="name"
-							style="min-width: 120px; display: inline-block;"><b>${pObj.des}</b>
+							style="min-width: 120px; display: inline-block;"><b>${pObj.price}</b>
 						</span>
 						</a>
 
@@ -33,16 +30,19 @@
 		<div class="centered"></div>
 		<div class="container-fluid">
 			<div class="row">
+			 ${name}
+				
 				<div class="col-md-6 mx-auto">
 					<div class="card card-body" style="width: 155%;">
 						<h3 class="text-center mb-4">Add Product</h3>
-
+ 
 						<fieldset>
 							<div class="form-group">
 								<select class="form-control input-lg">
-									<option selecterd="">Category</option>
-									<c:forEach items=${listCategory} var="category">
-										<option value=${category.id}>${category.categoryName}
+									<option selected>Category</option>
+									<c:forEach items="${listCategory}" var="category">
+									
+										<option value="${category.id}">${category.Id}
 										</option>
 									</c:forEach>
 
@@ -62,7 +62,7 @@
 									type="number">
 							</div>
 							<div class="form-group">
-								<textarea type="text" id="des" name="des"
+								<textarea id="des" name="des"
 									placeholder="Enter Description " class="form-control input-lg"
 									rows="4"></textarea>
 							</div>
