@@ -14,10 +14,9 @@
 <body>
 
 	<jsp:include page='Header.jsp' />
-	<jsp:include page='NavbarProducts.jsp' />
 
 	<div class="container">
-
+${msg}
 		<h2>Register Form</h2>
 		<form action="Register" method="post">
 			<div class="form-group">

@@ -19,43 +19,49 @@ public class LoginUserController extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = -2558903941303199209L;
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 	}
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
+		// doGet(request, response);
 		response.setContentType("text/html");
 
-		String email=request.getParameter("email");
-		String pass=request.getParameter("pass");
+		String email = request.getParameter("email");
+		String pass = request.getParameter("pass");
 
-		Users obj=new Users();
+		Users obj = new Users();
 		obj.setEmail(email);
 		obj.setPassword(pass);
 
-		UserDaoImpl login=new UserDaoImpl();
-		Users user =login.validateUser(email, pass);
+		UserDaoImpl login = new UserDaoImpl();
+		Users user = login.validateUser(email, pass);
 
-             if(user!=null) {
-					//HttpSession session=request.getSession();  
-			     //session.setAttribute("name",user.getFName());
-			       
-			        if(user.getRole().equals("Admin")) {
-			        	//request.getRequestDispatcher("Header.jsp");
-						//rd1.forward(request, response);
-						RequestDispatcher rd=request.getRequestDispatcher("AdminHome.jsp");
-				    	rd.forward(request, response);
+		if (user != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("userObject", user);
 
-					}
-			        
-				}
-				if(user.getRole().equals("User")) {
-					
-				}
+			session.setAttribute("fName", user.getFName());
+			session.setAttribute("lName", user.getLName());
+			if (user.getRole().equals("Admin")) {
+				request.getRequestDispatcher("navbar.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("AdminHome.jsp");
+				rd.forward(request, response);
+
+			}
+
 		}
-		
+		if (user.getRole().equals("User")) {
+			request.getRequestDispatcher("navbar.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("UserPage.jsp");
+			rd.forward(request, response);
+
+		}
 	}
 
-
+}

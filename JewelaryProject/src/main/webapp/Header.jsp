@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -75,17 +77,27 @@
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false"> <span class="glyphicon glyphicon glyphicon-user"></span>
           Account</a>
-          
-        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+         
+    <c:if test="${not empty sessionScope.userObject}">    
+    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item"  >${userObject.FName} ${userObject.LName}</a>
+          <a class="dropdown-item" href="LogoutController"> <span class="glyphicon glyphicon-log-out"></span>
+          Logout</a>
+        </div>
+      
+    </c:if>   
+		 <c:if test="${empty sessionScope.userObject}">    
+ 	<div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="Login.jsp"><span class="glyphicon .glyphicon-glyphicon-log-in"></span>
           Login / Signup</a>
           <a class="dropdown-item" href="#"><span class="glyphicon .glyphicon-glyphicon-download-alt"></span> Order History</a>
           <a class="dropdown-item" href="#">  <span class="glyphicon .glyphicon-glyphicon-download-alt"></span>
           Download App</a>
         </div>
-      </li>
-
-    </ul>
+       </c:if>
+	
+        </li>
+       </ul>
     <!-- Links -->
 
   </div>

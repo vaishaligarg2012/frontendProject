@@ -1,14 +1,15 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <jsp:include page='Header.jsp' />
-<jsp:include page='NavbarProducts.jsp' />
+<jsp:include page='navbar.jsp' />
+
 <link href="css/Category.css" rel="stylesheet" type="text/css"
 	media="all" />
 
-<body>
-	<div class="split left">
 
-		<div class="">
+<div>
+	<div class="split left">
+        <div class="">
 			<div>
 				<button style="margin-left: 2%;" type="button" class="btn btn-dark">
 					<a href="viewAllProduct" style="color: white">View All Products</a>
@@ -93,5 +94,5 @@
 				</div>
 			</div>
 		</div>
-
-	</div>
+</div>
+</div>

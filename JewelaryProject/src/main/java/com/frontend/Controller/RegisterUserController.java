@@ -1,6 +1,8 @@
 package com.frontend.Controller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,9 +41,20 @@ public class RegisterUserController extends HttpServlet {
 		obj.setRole(role);
 		
 		UserDaoImpl usd=new UserDaoImpl();
-		usd.addUsers(obj);
+		boolean d=usd.addUsers(obj);
 		System.out.println(usd);
 		
+		if(d) {
+		     	request.setAttribute("msg", "Sucessfully Registered");
+			    RequestDispatcher rd=request.getRequestDispatcher("Login.jsp");
+			    rd.forward(request, response);
+
+		}else {
+			request.setAttribute("msg", "Please try again!!");
+		    RequestDispatcher rd=request.getRequestDispatcher("Register.jsp");
+		    rd.forward(request, response);
+			
+		}
 	    
 	}
 

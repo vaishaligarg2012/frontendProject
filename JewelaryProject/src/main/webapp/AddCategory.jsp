@@ -1,12 +1,11 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <jsp:include page='Header.jsp' />
-<jsp:include page='NavbarProducts.jsp' />
-<link href="css/Category.css" rel="stylesheet" type="text/css"
-	media="all" />
+<jsp:include page='navbar.jsp' />
 
-<body>
+<link href="css/Category.css" rel="stylesheet" type="text/css" media="all" />
 
+<div class="container-fluid">
 	<div class="split left">
 		<div class="">
 			<div>
@@ -69,4 +68,5 @@
 			<!-- Material form contact -->
 
 		</div>
+	</div>
 	</div>

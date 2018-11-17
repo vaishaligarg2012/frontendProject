@@ -15,10 +15,10 @@
 <body>
 
 <jsp:include page='Header.jsp' />
-<jsp:include page='NavbarProducts.jsp' />
 
 	<div class="container">
 		<h2>Login Form</h2>
+		${msg}
 		<form action="Login" method="POST">
 			<div class="form-group">
 				<label for="email">Email:</label> <input type="email"
