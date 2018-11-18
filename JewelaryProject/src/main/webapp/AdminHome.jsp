@@ -11,10 +11,10 @@
         <h3 class="headermessage" >Choice yours!!</h3>
     </div>
     <div class="row" style="margin-left: 11%;margin-bottom: 1%;" >  
-        <a class="image-block col-sm-4" href="AddCategory.jsp" style="cursor: -webkit-grab;background: url(https://s3.amazonaws.com/uploads.intercomcdn.com/i/o/16658179/cd639af50d6939f77a77be1d/subcat_graphics-0.jpg) no-repeat center top;background-size:cover;">
+        <a class="image-block col-sm-4" href="AddCategory.jsp" style="cursor: -webkit-grab;height:233px;background: url(https://i.ytimg.com/vi/2QvOxa_7wEw/maxresdefault.jpg) no-repeat center top;background-size:cover;">
             <p> Category </p>
         </a>
-        <a class="image-block col-sm-4" href="Products.jsp"  style="margin-left: 22%;cursor: -webkit-grab;background: url(http://www.b2bfinpal.com/wp-content/uploads/2017/04/product.jpg) no-repeat center top;background-size:cover;">
+        <a class="image-block col-sm-4" href="Products.jsp"  style="margin-left: 22%;height:233px;cursor: -webkit-grab;background: url(https://www.printwand.com/blog/media/2012/01/ultimate-guide-to-your-product-launch.jpg) no-repeat center top;background-size:cover;">
             <p> Product </p>
         </a>
         
