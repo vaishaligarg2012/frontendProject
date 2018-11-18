@@ -1,6 +1,7 @@
 package com.frontend.Controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.backend.DAO.CategoryDAO;
+import com.backend.DAO.CategoryDAOImpl;
 import com.backend.DAO.ProductDAOImpl;
 import com.backend.Model.Category;
 import com.backend.Model.Product;
@@ -26,16 +29,27 @@ public class AddProductController extends HttpServlet {
 		//doGet(request, response);
 		
 		response.setContentType("text/html");
-	    String OptionValueCategoryName=	request.getParameter("item");
+	
+		String OptionValueCategoryName=	request.getParameter("categoryNameGet");
 	    String name=request.getParameter("name");
 	    double price=Double.parseDouble(request.getParameter("price"));
 	    int quantity=Integer.parseInt(request.getParameter("quantity"));
 	    String des=request.getParameter("des");
 	    System.out.println(OptionValueCategoryName+" "+price+" "+quantity+" "+des);
-	    Category category =new Category();
-	    category.setCategoryName(OptionValueCategoryName);
+	    
+	    
 	    Product product = new Product();
-	  //  product.setCategory(category);
+	    CategoryDAO daoImpl=new CategoryDAOImpl();
+	    List<Category> list=daoImpl.getAllCategory();
+	    for(Category cat:list) {
+	    	if(cat.getCategoryId()==Integer.parseInt(OptionValueCategoryName)) {
+	    		product.setCategory(cat);
+	    	}
+	    		
+	    }
+	    
+	    
+	    
 	    product.setProductName(name);
 	    product.setPrice(price);
 	    product.setQuantity(quantity);	
