@@ -11,44 +11,32 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <body>
 
 	<jsp:include page='Header.jsp' />
 
-	<div class="container">
-${msg}
-		<h2>Register Form</h2>
-		<form action="Register" method="post">
-			<div class="form-group">
-				<label for="email">Email:</label> <input type="email"
-					class="form-control" id="email" placeholder="Enter email"
-					name="email">
-			</div>
-			<div class="form-group">
-				<label for="pwd">Password:</label> <input type="password"
-					class="form-control" id="pass" placeholder="Enter password"
-					name="pass">
-			</div>
-			<div class="form-group">
-				<label for="pwd">First Name:</label> <input type="text"
-					class="form-control" id="fname" placeholder="Enter First Name"
-					name="fname">
-			</div>
-			<div class="form-group">
-				<label for="pwd">Last Name:</label> <input type="text"
-					class="form-control" id="lname" placeholder="Enter Last Name"
-					name="lname">
-			</div>
-			<div class="form-group">
-				<label for="pwd">Role:</label> <input type="text"
-					class="form-control" id="role" placeholder="Admin/User" name="role">
-			</div>
-
-			<div>
-				<button type="submit" class="btn btn-default">Create</button>
-			</div>
-		</form>
-	</div>
-
+	
+<div class="span3" style="margin-left:41%">
+    <h2>Sign Up</h2>
+    <form action="Register" method="post">
+    <label>First Name</label>
+    <input type="text" name="fname" id="fname" class="span3">
+    <label>Last Name</label>
+    <input type="text" name="lname" id="lname" class="span3">
+    <label>Email Address</label>
+    <input type="email" name="email" id="email" class="span3">
+   
+    <label>Password</label>
+    <input type="password" name="pass" id="pass" class="span3">
+    <label>Role</label>
+    <input type="text" name="role" id="role" class="span3">
+    
+    <input type="submit" value="Sign up" class="btn btn-primary pull-right">
+    <div class="clearfix"></div>
+    </form>
+</div>
 </body>
 <br>

@@ -8,8 +8,7 @@
 
 <div class="container-fluid">
     <div class="row text-center" style="margin-left:15%">
-        <h3 class="headermessage" >Choice yours!!</h3>
-    </div>
+     </div>
     <div class="row" style="margin-left: 11%;margin-bottom: 1%;" >  
         <a class="image-block col-sm-4" href="AddCategory.jsp" style="cursor: -webkit-grab;height:233px;background: url(https://i.ytimg.com/vi/2QvOxa_7wEw/maxresdefault.jpg) no-repeat center top;background-size:cover;">
             <p> Category </p>

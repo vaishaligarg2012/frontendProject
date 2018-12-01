@@ -1,40 +1,66 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Login</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
 
 <jsp:include page='Header.jsp' />
 
-	<div class="container">
-		<h2>Login Form</h2>
-		${msg}
-		<form action="Login" method="POST">
-			<div class="form-group">
-				<label for="email">Email:</label> <input type="email"
-					class="form-control" id="email" placeholder="Enter email"
-					name="email">
+<div class="container">
+    
+
+    <div class="omb_login">
+    	<h3 class="omb_authTitle">Login or <a href="/JewelaryProject/Register.jsp">Sign up</a></h3>
+		<div class="row omb_row-sm-offset-3 omb_socialButtons">
+    	    <div class="col-xs-4 col-sm-2">
+		        <a href="#" class="btn btn-lg btn-block omb_btn-facebook">
+			        <i class="fa fa-facebook visible-xs"></i>
+			        <span class="hidden-xs">Facebook</span>
+		        </a>
+	        </div>
+        	<div class="col-xs-4 col-sm-2">
+		        <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
+			        <i class="fa fa-twitter visible-xs"></i>
+			        <span class="hidden-xs">Twitter</span>
+		        </a>
+	        </div>	
+        	<div class="col-xs-4 col-sm-2">
+		        <a href="#" class="btn btn-lg btn-block omb_btn-google">
+			        <i class="fa fa-google-plus visible-xs"></i>
+			        <span class="hidden-xs">Google+</span>
+		        </a>
+	        </div>	
+		</div>
+
+		<div class="row omb_row-sm-offset-3 omb_loginOr">
+			<div class="col-xs-12 col-sm-6">
+				<hr class="omb_hrOr">
+				<span class="omb_spanOr">or</span>
 			</div>
-			<div class="form-group">
-				<label for="pwd">Password:</label> <input type="password"
-					class="form-control" id="pass" placeholder="Enter password"
-					name="pass">
+		</div>
+
+		<div class="row omb_row-sm-offset-3">
+			<div class="col-xs-12 col-sm-6">	
+			<span class="help-block">	${msg}</span>
+			    <form class="omb_loginForm" action="Login" method="POST" autocomplete="off" >
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-user"></i></span>
+						<input type="text" class="form-control" name="email" id="email" placeholder="email address">
+					</div>
+					<span class="help-block"></span>
+										
+					<div class="input-group">
+						<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+						<input  type="password" class="form-control" name="pass" id="pass" placeholder="Password">
+					</div>
+                     					<span class="help-block"></span>
+                     
+					<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+				</form>
 			</div>
-			<div>
-				<button type="submit" class="btn btn-default">Submit</button>
-				<a href="/JewelaryProject/Register.jsp" class="btn btn-default">Create An
-					Account</a>
-			</div>
-		</form>
+    	</div>
+		<div class="row omb_row-sm-offset-3">
+			
+		</div>	    	
 	</div>
-</body>
+
+
+
+        </div>
+  
